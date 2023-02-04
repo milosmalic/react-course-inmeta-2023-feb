@@ -51,6 +51,14 @@ export default function State() {
           onChange={e => setUser({ ...user, firstName: e.target.value })}
         />
       </section>
+      <section>
+        <label>Last Name:</label>
+        <input
+          className="field"
+          value={user.lastName}
+          onChange={e => setUser({ ...user, lastName: e.target.value })}
+        />
+      </section>
     </div>
   );
 }
