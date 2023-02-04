@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 // Some examples of side effects are: fetching data, directly updating the DOM, and timers.
 // useEffect accepts two arguments.
 // The second argument is optional. useEffect(<function>, <dependency>)
-export default function Effect1() {
+export const Effect1 = () => {
   const [resourceType, setResourceType] = useState('posts');
   const [items, setItems] = useState<any[]>([]);
 
@@ -44,4 +44,4 @@ export default function Effect1() {
       })}
     </>
   );
-}
+};

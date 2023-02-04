@@ -5,7 +5,7 @@ import { User } from './models/user';
 
 // The React useState Hook allows us to track state in a function component.
 // State generally refers to data or properties that need to be tracking in an application.
-export default function State() {
+export const State = () => {
   // hooks, prefixed with use, can only be used in a function component, not in a class component
   // you can't put hooks in a loop, condition, or nested function
   const [count, setCount] = useState(0);
@@ -67,4 +67,4 @@ export default function State() {
       </section>
     </div>
   );
-}
+};
