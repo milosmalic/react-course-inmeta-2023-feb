@@ -1,0 +1,20 @@
+import React, { ElementType, lazy, Suspense } from 'react';
+import { RouteObject, useRoutes } from 'react-router';
+
+/*
+ * Suspense is a component that wraps the custom components and enables them to communicate
+ *  to React that they're waiting for some data to load before the component is rendered.
+ * */
+const Loadable = (Component: ElementType) => (props: any) =>
+  (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Component {...props} />
+    </Suspense>
+  );
+
+/* Lazy Loaded Todos Pages for code splitting*/
+const WorkTodosPage = Loadable(lazy(() => import('./pages/WorkTodosPage')));
+const ShoppingListPage = Loadable(
+  lazy(() => import('./pages/ShoppingListPage')),
+);
+const LoginPage = Loadable(lazy(() => import('./pages/LoginPage')));
