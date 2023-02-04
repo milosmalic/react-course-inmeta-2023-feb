@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply mb-5 text-2xl;
+  }
+  h2 {
+    @apply mb-4 text-xl;
+  }
+  h3 {
+    @apply mb-3 text-lg;
+  }
+}
+
+@layer components {
+  .navbar {
+    @apply w-full bg-gray-100 pb-10 font-sans shadow;
+  }
+  .btn {
+    @apply rounded-lg p-3 text-base font-medium;
+  }
+  .btn--primary {
+    @apply bg-sky-500 text-white disabled:bg-sky-300 disabled:text-gray-300;
+  }
+  .btn--secondary {
+    @apply bg-violet-600 text-white disabled:bg-violet-400 disabled:text-gray-300;
+  }
+  .active {
+    @apply bg-blue-200;
+  }
+  .not-active {
+    @apply bg-gray-100;
+  }
+  .form {
+    @apply mb-8 flex flex-row items-center justify-start;
+  }
+  .field {
+    @apply mr-4 border-0 border-b bg-white pt-2 pb-2 pr-0 pl-0 text-base text-gray-900 outline-none;
+  }
+}
+
+@layer utilities {
+  .filter-none {
+    filter: none;
+  }
+  .filter-grayscale {
+    filter: grayscale(100%);
+  }
+}
