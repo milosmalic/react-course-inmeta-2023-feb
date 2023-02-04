@@ -25,5 +25,23 @@ export default function Effect1() {
   // If it's not empty, it's gonna run every time the value in the array changes.
   // The dependency array is needed to avoid infinite loops.
 
-  return <div>Effect1 Works!</div>;
+  return (
+    <>
+      <div>
+        <button onClick={() => setResourceType('posts')} className="btn">
+          Posts
+        </button>
+        <button onClick={() => setResourceType('users')} className="btn">
+          Users
+        </button>
+        <button onClick={() => setResourceType('comments')} className="btn">
+          Comments
+        </button>
+      </div>
+      <h1>{resourceType}</h1>
+      {items.map((item: any) => {
+        return <pre key={item.id}>{JSON.stringify(item)}</pre>;
+      })}
+    </>
+  );
 }
