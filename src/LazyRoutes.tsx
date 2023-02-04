@@ -12,9 +12,38 @@ const Loadable = (Component: ElementType) => (props: any) =>
     </Suspense>
   );
 
-/* Lazy Loaded Todos Pages for code splitting*/
+/* Lazy Loaded Pages for code splitting*/
 const WorkTodosPage = Loadable(lazy(() => import('./pages/WorkTodosPage')));
 const ShoppingListPage = Loadable(
   lazy(() => import('./pages/ShoppingListPage')),
 );
 const LoginPage = Loadable(lazy(() => import('./pages/LoginPage')));
+
+type Paths = {
+  work: string;
+  shoppingList: string;
+  auth: string;
+};
+
+export const pathNames: Paths = {
+  work: '/',
+  shoppingList: '/shopping-list',
+  auth: '/auth',
+};
+
+const lazyRoutes: RouteObject[] = [
+  {
+    path: pathNames.work,
+    element: <WorkTodosPage />,
+  },
+  {
+    path: pathNames.shoppingList,
+    element: <ShoppingListPage />,
+  },
+  {
+    path: pathNames.auth,
+    element: <LoginPage />,
+  },
+];
+
+export default lazyRoutes;
